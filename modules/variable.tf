@@ -1,6 +1,7 @@
 variable "managementgroup" {
   type = string
   
+  
 }
 variable "childgroupA0" { 
   type = string
