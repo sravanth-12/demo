@@ -1,8 +1,8 @@
 
 resource "azurerm_network_interface" "vnet" {
   name                = var.NIC_name
-  location            = var.resource_group_location
-  resource_group_name = var.resource_group_name
+  location            = var.location
+  resource_group_name = var.resource-group-name
 
   ip_configuration {
     name                          = var.ip_configuration_name
@@ -18,8 +18,8 @@ resource "tls_private_key" "ssh" {
 
 resource "azurerm_linux_virtual_machine" "virtual-machine" {
   name                = var.vm_name
-  resource_group_name = var.resource_group_name
-  location            = var.resource_group_location
+  resource_group_name = var.resource-group-name
+  location            = var.location
   size                = var.size
   admin_username      = var.username
   network_interface_ids = [
