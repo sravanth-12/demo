@@ -69,10 +69,10 @@ variable "OS_version" {
 }
 
 
-variable "resource_group_name" {
+variable "resource-group-name" {
     type = string
 }
-variable "resource_group_location" {
+variable "location" {
   type=string
 }
 variable "subnet_id" {
