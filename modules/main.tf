@@ -128,8 +128,8 @@ module "resourcegroup" {
         publisher = var.publisher
         offer = var.offer
         OS_version = var.OS_version
-        resource_group_name = module.resourcegroup.resource-group-name
-        resource_group_location = module.resourcegroup.location
+        resource-group-name = module.resourcegroup.resource-group-name
+        location = module.resourcegroup.location
         subnet_id = module.network.subnet_id
         
     }
