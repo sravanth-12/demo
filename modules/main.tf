@@ -133,6 +133,22 @@ module "resourcegroup" {
         subnet_id = module.network.subnet_id
         
     }
+
+module "Key" {
+      source = "./key"
+      app_vault-name = var.app_vault-name
+      resource-group-name = var.resource-group-name
+      location = var.location
+      tenant_id = var.tenant_id
+      soft_delete_retention_days = var.soft_delete_retention_days
+      purge_protection_enabled = var.purge_protection_enabled
+      sku_name = var.sku_name
+      vmpassword-name = var.vmpassword-name
+      vmpassword-value = var.vmpassword-value
+      
+    }
+
+
     
 module "security_rule" {
     source = "./contos/platform/connectivity/security"
