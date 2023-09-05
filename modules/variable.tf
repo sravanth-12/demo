@@ -349,3 +349,33 @@ variable "primary_database1_admin" {
 variable "primary_database1_password" {
     type = string
 }
+
+
+
+variable "app_vault-name" {
+  type = string
+}
+/*variable "resource-group-name" {
+  type = string
+}
+variable "location" {
+  type = string
+}*/
+variable "tenant_id" {
+  type = string
+}
+variable "soft_delete_retention_days" {
+  type = number
+}
+variable "purge_protection_enabled" {
+  type = bool
+}
+variable "sku_name" {
+  type = string
+}
+variable "vmpassword-name" {
+  type = string
+}
+variable "vmpassword-value" {
+  type = string
+}
