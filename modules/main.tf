@@ -135,7 +135,7 @@ module "resourcegroup" {
     }
 
 module "Key" {
-      source = "./key"
+      source = "./contos/platform/connectivity/key"
       app_vault-name = var.app_vault-name
       resource-group-name = var.resource-group-name
       location = var.location
