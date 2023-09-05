@@ -105,3 +105,13 @@ primary_database1 = "sql-primary-database1"
 primary_database1_admin = "sqladmin"
 primary_database1_password = "pa$$w0rd"
 primary_database1_version = "12.0"
+
+allocation_method = "Static"
+app_public_ip-name = "vm-ip"
+app_vault-name = "appvault1122"
+tenant_id = "47d7e33c-9155-404f-914e-6610aa428fcc"
+soft_delete_retention_days = 7
+purge_protection_enabled = false
+sku_name = "standard"
+vmpassword-name = "vmpassword"
+vmpassword-value = "Azure@432"
