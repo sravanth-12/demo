@@ -152,10 +152,10 @@ variable "vmsubnet_address_prefixes" {
   type = list(string)
 
 }
+//
 variable "web-nsg-sr1-name" {
   type = string
 }
-//
 variable "web-nsg-sr1-priority" {
   type = string
 }
