@@ -113,7 +113,7 @@ module "resourcegroup" {
         primary_database_version = var.primary_database_version
     }
    module "compute" {
-        source = "./vm"
+        source = "./contos/platform/connectivity/compute"
         resource-group-name = module.resource-group.resource-group-name
         location = module.resource-group.location
         vm_name = var.vm_name
