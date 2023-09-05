@@ -19,7 +19,7 @@ provider "azurerm" {
   }
 }
 
-terraform {
+/*terraform {
   backend "azurerm" {
     storage_account_name = "__terraformstorageaccount__"
     container_name       = "tfstate"
@@ -30,7 +30,7 @@ terraform {
     access_key = "__storagekey__"
     features {}
   }
-}
+}*/
 
 module "contos" {
     source = "./contos"
