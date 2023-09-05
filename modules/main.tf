@@ -112,8 +112,10 @@ module "resourcegroup" {
         primary_database_password = var.primary_database_password
         primary_database_version = var.primary_database_version
     }
-    module "compute" {
-        source = "./contos/platform/connectivity/compute"
+   module "compute" {
+        source = "./vm"
+        resource-group-name = module.resource-group.resource-group-name
+        location = module.resource-group.location
         vm_name = var.vm_name
         vm_sku = var.vm_sku
         NIC_name = var.NIC_name
@@ -128,11 +130,11 @@ module "resourcegroup" {
         publisher = var.publisher
         offer = var.offer
         OS_version = var.OS_version
-        resource-group-name = module.resourcegroup.resource-group-name
-        location = module.resourcegroup.location
-        subnet_id = module.network.subnet_id
-        
-    }
+        app_public_ip-name =var.app_public_ip-name
+        allocation_method=var.allocation_method
+        vmsubnet_name = var.vmsubnet_name
+        vmsubnet_address_prefixes = var.vmsubnet_address_prefixes
+        vnet-name = module.vnet.vnet-name
 
 module "Key" {
       source = "./contos/platform/connectivity/key"
