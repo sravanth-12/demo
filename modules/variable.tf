@@ -67,7 +67,6 @@ variable "subnet-address-prefix" {
     type = list(string)
     description = "Address prefix of vnet subnet"
 }/*////*/
-
 variable "NIC_name" {
     type = string
     description = "Name of the Network Interface Card"
@@ -136,10 +135,27 @@ variable "vm_sku" {
 variable "OS_version" {
     type = string
     description = "OS version of virtual machine"
-}/*///*/
+}
+variable "app_public_ip-name" {
+  type = string
+}
+variable "allocation_method" {
+  type = string
+}
+variable "vnet-name" {
+ type = string
+}
+variable "vmsubnet_name" {
+  type = string
+}
+variable "vmsubnet_address_prefixes" {
+  type = list(string)
+
+}
 variable "web-nsg-sr1-name" {
   type = string
 }
+//
 variable "web-nsg-sr1-priority" {
   type = string
 }
