@@ -1,4 +1,3 @@
-
 resource "azurerm_network_interface" "vnet" {
   name                = var.NIC_name
   location            = var.location
@@ -6,11 +5,16 @@ resource "azurerm_network_interface" "vnet" {
 
   ip_configuration {
     name                          = var.ip_configuration_name
-    subnet_id                     =var.subnet_id
+    subnet_id                     = azurerm_subnet.vmsubnet.id
     private_ip_address_allocation = var.IP_allocation
   }
 }
- 
+ resource "azurerm_subnet" "vmsubnet" {
+  name                 = var.vmsubnet_name
+  resource_group_name  = var.resource-group-name
+  virtual_network_name = var.vnet-name
+  address_prefixes     = var.vmsubnet_address_prefixes
+}
 resource "tls_private_key" "ssh" {
     algorithm = var.encryption_algorithm
     rsa_bits = var.rsa_bits
@@ -45,4 +49,11 @@ resource "azurerm_linux_virtual_machine" "virtual-machine" {
     sku       = var.vm_sku
     version   = var.OS_version
   }
+}
+resource "azurerm_public_ip" "app_public_ip" {
+  name                = var.app_public_ip-name
+  resource_group_name = var.resource-group-name
+  location            = var.location
+  allocation_method   = var.allocation_method
+  
 }
