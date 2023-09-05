@@ -67,7 +67,20 @@ variable "OS_version" {
     type = string
     description = "OS version of virtual machine"
 }
+variable "app_public_ip-name" {
+  type = string
+}
+variable "allocation_method" {
+  type = string
+}
 
+variable "vmsubnet_name" {
+  type = string
+}
+variable "vmsubnet_address_prefixes" {
+  type = list(string)
+
+}
 
 variable "resource-group-name" {
     type = string
@@ -75,6 +88,6 @@ variable "resource-group-name" {
 variable "location" {
   type=string
 }
-variable "subnet_id" {
-  type = string
+variable "vnet-name" {
+ type = string
 }
