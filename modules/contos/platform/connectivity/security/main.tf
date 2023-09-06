@@ -2,7 +2,37 @@ resource "azurerm_network_security_group" "web-nsg" {
   name                = "web-nsg"
   location            = var.location
   resource_group_name = var.resource_group
-  
+
+resource "azurerm_firewall" "firewall" {
+  name                = var.firewall_name
+  location            = var.location
+  resource_group_name = var.resource-group-name
+  sku_name            = var.firewall_sku_name
+  sku_tier            = var.firewall_sku_tier
+
+
+  ip_configuration {
+    name                 = var.ip_configuration_name
+    subnet_id            = azurerm_subnet.firewallsubnet.id
+    public_ip_address_id = azurerm_public_ip.publicip.id
+  }
+
+}
+resource "azurerm_public_ip" "publicip" {
+  name                = var.public_ip_firewall_name
+  location            = var.location
+  resource_group_name = var.resource-group-name
+  allocation_method   = var.public_ip_firewall_allocation_method
+  sku                 = var.public_ip_firewall_sku
+}
+resource "azurerm_subnet" "firewallsubnet" {
+  name                 = var.firewallsubnet_name
+  resource_group_name  = var.resource-group-name
+  virtual_network_name = var.vnet-name
+  address_prefixes     = var.firewallsubnet_address_prefixes
+}
+
+
   security_rule {
     name                       = var.web-nsg-sr1-name
     priority                   = var.web-nsg-sr1-priority
