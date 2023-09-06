@@ -94,7 +94,7 @@ module "resourcegroup" {
     location = var.location
     
 }
-   module "network" {
+   module "vnet" {
         source = "./contos/platform/connectivity/network"
         location = module.resourcegroup.location
         resource-group-name = module.resourcegroup.resource-group-name
@@ -114,8 +114,8 @@ module "resourcegroup" {
     }
    module "compute" {
         source = "./contos/platform/connectivity/compute"
-        resource-group-name = module.resource-group.resource-group-name
-        location = module.resource-group.location
+        resource-group-name = module.resourcegroup.resource-group-name
+        location = module.resourcegroup.location
         vm_name = var.vm_name
         vm_sku = var.vm_sku
         NIC_name = var.NIC_name
@@ -135,7 +135,7 @@ module "resourcegroup" {
         vmsubnet_name = var.vmsubnet_name
         vmsubnet_address_prefixes = var.vmsubnet_address_prefixes
         vnet-name = module.vnet.vnet-name
-
+      }
 module "Key" {
       source = "./contos/platform/connectivity/key"
       app_vault-name = var.app_vault-name
@@ -210,13 +210,15 @@ module "security_rule" {
     db-nsg-sr2-source_address_prefix = var.db-nsg-sr2-source_address_prefix
     db-nsg-sr2-source_port_range = var.app-nsg-sr2-source_port_range
     web_subnet_id = var.web_subnet_id
-    resource_group = module.resourcegroup.resource-group-name
+    resource-group-name = module.resourcegroup.resource-group-name
     location = module.resourcegroup.location
+    vnet-name = module.vnet.vnet-name
     firewallsubnet_name       = var.firewallsubnet_name
     firewallsubnet_address_prefixes     = var.firewallsubnet_address_prefixes
     firewall_name = var.firewall_name
     firewall_sku_name = var.firewall_sku_name
     firewall_sku_tier = var.firewall_sku_tier
+    ip-configuration-name = var.ip-configuration-name
     public_ip_firewall_name = var.public_ip_firewall_name
     public_ip_firewall_allocation_method = var.public_ip_firewall_allocation_method
     public_ip_firewall_sku = var.public_ip_firewall_sku
