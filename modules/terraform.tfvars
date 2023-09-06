@@ -28,7 +28,18 @@ stgacc_type = "Standard_LRS"
 publisher = "Canonical"
 offer = "0001-com-ubuntu-server-focal"
 vm_sku = "20_04-lts"
-OS_version = "latest"/*////*/
+OS_version = "latest"
+allocation_method = "Static"
+app_public_ip-name = "vm-ip"
+app_vault-name = "appvault1122"
+tenant_id = "47d7e33c-9155-404f-914e-6610aa428fcc"
+soft_delete_retention_days = 7
+purge_protection_enabled = false
+sku_name = "standard"
+vmpassword-name = "vmpassword"
+vmpassword-value = "Azure@432"
+vmsubnet_name="vmsubnet"
+vmsubnet_address_prefixes = [ "20.0.3.0/24" ]/*////*/
 
 
 web-nsg-sr1-name = "sr1-rule1"
@@ -106,17 +117,6 @@ primary_database1_admin = "sqladmin"
 primary_database1_password = "pa$$w0rd"
 primary_database1_version = "12.0"
 
-allocation_method = "Static"
-app_public_ip-name = "vm-ip"
-app_vault-name = "appvault1122"
-tenant_id = "47d7e33c-9155-404f-914e-6610aa428fcc"
-soft_delete_retention_days = 7
-purge_protection_enabled = false
-sku_name = "standard"
-vmpassword-name = "vmpassword"
-vmpassword-value = "Azure@432"
-vmsubnet_name="vmsubnet"
-vmsubnet_address_prefixes = [ "20.0.3.0/24" ]
 
 firewallsubnet_name="AzureFirewallSubnet"
 firewallsubnet_address_prefixes = ["20.0.2.0/24"]
