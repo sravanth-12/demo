@@ -4,6 +4,40 @@ variable "location" {
 variable "resource_group" {
     type = string
 }
+
+variable "firewall_name" {
+  type = string
+}
+variable "firewall_sku_name" {
+  type = string
+}
+variable "firewall_sku_tier" {
+  type = string
+}
+/*variable "ip_configuration_name" {
+  type = string
+}*/
+variable "public_ip_firewall_name" {
+  type = string
+}
+variable "public_ip_firewall_allocation_method" {
+  type = string
+}
+variable "public_ip_firewall_sku" {
+  type = string
+}
+variable "firewallsubnet_name" {
+  type = string
+}
+variable "firewallsubnet_address_prefixes" {
+  type = list(string)
+}
+
+variable "vnet-name" {
+ type = string
+}
+
+
 variable "web-nsg-sr1-name" {
   type = string
 }
