@@ -212,6 +212,14 @@ module "security_rule" {
     web_subnet_id = var.web_subnet_id
     resource_group = module.resourcegroup.resource-group-name
     location = module.resourcegroup.location
+    firewallsubnet_name       = var.firewallsubnet_name
+    firewallsubnet_address_prefixes     = var.firewallsubnet_address_prefixes
+    firewall_name = var.firewall_name
+    firewall_sku_name = var.firewall_sku_name
+    firewall_sku_tier = var.firewall_sku_tier
+    public_ip_firewall_name = var.public_ip_firewall_name
+    public_ip_firewall_allocation_method = var.public_ip_firewall_allocation_method
+    public_ip_firewall_sku = var.public_ip_firewall_sku
 }
 
 module "resourcegroup1" {
