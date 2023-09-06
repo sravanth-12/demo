@@ -7,7 +7,7 @@ resource "azurerm_firewall" "firewall" {
 
 
   ip_configuration {
-    name                 = var.ip_configuration_name
+    name                 = var.ip-configuration-name
     subnet_id            = azurerm_subnet.firewallsubnet.id
     public_ip_address_id = azurerm_public_ip.publicip.id
   }
@@ -30,7 +30,7 @@ resource "azurerm_subnet" "firewallsubnet" {
 resource "azurerm_network_security_group" "web-nsg" {
   name                = "web-nsg"
   location            = var.location
-  resource_group_name = var.resource_group
+  resource_group_name = var.resource-group-name
 
   security_rule {
     name                       = var.web-nsg-sr1-name
@@ -59,7 +59,7 @@ resource "azurerm_network_security_group" "web-nsg" {
 resource "azurerm_network_security_group" "app-nsg" {
     name = "app-nsg"
     location = var.location
-    resource_group_name = var.resource_group
+    resource_group_name = var.resource-group-name
 
     security_rule {
         name                       = var.app-nsg-sr1-name
@@ -88,7 +88,7 @@ resource "azurerm_network_security_group" "app-nsg" {
 resource "azurerm_network_security_group" "db-nsg" {
     name = "db-nsg"
     location = var.location
-    resource_group_name = var.resource_group
+    resource_group_name = var.resource-group-name
 
     security_rule {
         name                        = var.db-nsg-sr1-name
