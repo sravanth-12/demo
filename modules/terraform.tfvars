@@ -115,3 +115,14 @@ purge_protection_enabled = false
 sku_name = "standard"
 vmpassword-name = "vmpassword"
 vmpassword-value = "Azure@432"
+vmsubnet_name="vmsubnet"
+vmsubnet_address_prefixes = [ "20.0.3.0/24" ]
+
+firewallsubnet_name="AzureFirewallSubnet"
+firewallsubnet_address_prefixes = ["20.0.2.0/24"]
+firewall_name = "sr-fw"
+firewall_sku_name = "AZFW_VNet"
+firewall_sku_tier = "Standard"
+public_ip_firewall_allocation_method = "Static"
+public_ip_firewall_name = "fw-ip"
+public_ip_firewall_sku = "Standard"
