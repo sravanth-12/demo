@@ -405,9 +405,9 @@ variable "firewall_sku_name" {
 variable "firewall_sku_tier" {
   type = string
 }
-/*variable "ip_configuration_name" {
+variable "ip-configuration-name" {
   type = string
-}*/
+}
 variable "public_ip_firewall_name" {
   type = string
 }
@@ -423,4 +423,3 @@ variable "firewallsubnet_name" {
 variable "firewallsubnet_address_prefixes" {
   type = list(string)
 }
-
