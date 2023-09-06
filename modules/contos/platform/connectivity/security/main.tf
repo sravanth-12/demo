@@ -1,8 +1,3 @@
-resource "azurerm_network_security_group" "web-nsg" {
-  name                = "web-nsg"
-  location            = var.location
-  resource_group_name = var.resource_group
-
 resource "azurerm_firewall" "firewall" {
   name                = var.firewall_name
   location            = var.location
@@ -32,6 +27,10 @@ resource "azurerm_subnet" "firewallsubnet" {
   address_prefixes     = var.firewallsubnet_address_prefixes
 }
 
+resource "azurerm_network_security_group" "web-nsg" {
+  name                = "web-nsg"
+  location            = var.location
+  resource_group_name = var.resource_group
 
   security_rule {
     name                       = var.web-nsg-sr1-name
