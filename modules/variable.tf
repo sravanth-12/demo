@@ -142,9 +142,9 @@ variable "app_public_ip-name" {
 variable "allocation_method" {
   type = string
 }
-variable "vnet-name" {
+/*variable "vnet-name" {
  type = string
-}
+}*/
 variable "vmsubnet_name" {
   type = string
 }
@@ -424,6 +424,3 @@ variable "firewallsubnet_address_prefixes" {
   type = list(string)
 }
 
-variable "vnet-name" {
- type = string
-}
