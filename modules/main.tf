@@ -139,7 +139,7 @@ module "resourcegroup" {
 module "Key" {
       source = "./contos/platform/connectivity/key"
       app_vault-name = var.app_vault-name
-      resource-group-name = var.resource-group-name
+      resource-group-name = module.resourcegroup.resource-group-name
       location = var.location
       tenant_id = var.tenant_id
       soft_delete_retention_days = var.soft_delete_retention_days
